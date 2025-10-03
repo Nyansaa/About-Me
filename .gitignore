@@ -1,0 +1,12 @@
+# Ignore everything outside this folder
+*
+
+# But include these files
+!.gitignore
+!index.html
+!styles.css
+!script.js
+!README.md
+!Images/
+!Images/**
+
