@@ -207,8 +207,12 @@ body {
     justify-content: center;
     margin: 0 auto 1rem;
     overflow: hidden;
-    border: 3px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 5px solid #fbbf24;
+    box-shadow: 
+        0 0 20px rgba(251, 191, 36, 0.6),
+        0 0 40px rgba(251, 191, 36, 0.4),
+        0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: pulseGlow 2s ease-in-out infinite;
 }
 
 .profile-initials {
@@ -222,7 +226,9 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 20%;
     border-radius: 50%;
+    transform: scale(1.3);
 }
 
 .profile-info h3 {
@@ -656,5 +662,23 @@ section {
 @media (prefers-reduced-motion: no-preference) {
     html {
         scroll-behavior: smooth;
+    }
+}
+
+/* Profile Image Border Animation */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 
+            0 0 20px rgba(251, 191, 36, 0.6),
+            0 0 40px rgba(251, 191, 36, 0.4),
+            0 8px 20px rgba(0, 0, 0, 0.2);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 
+            0 0 30px rgba(251, 191, 36, 0.8),
+            0 0 60px rgba(251, 191, 36, 0.6),
+            0 8px 25px rgba(0, 0, 0, 0.3);
+        transform: scale(1.05);
     }
 }
