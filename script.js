@@ -165,6 +165,24 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
 
+// Back to Top Button
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
 // Skill bars animation (if you want to add progress bars later)
 function animateSkillBars() {
     const skillBars = document.querySelectorAll('.skill-bar');
